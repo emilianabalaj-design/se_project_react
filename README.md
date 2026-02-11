@@ -1,9 +1,16 @@
-# WTWR (What to Wear?)
+# WTWR (What to Wear)
 
-## About the project
+A React app that shows the current weather and suggests clothing items. Users can add new garments with an image URL and select the weather type.
 
-The idea of the application is pretty simple - we make a call to an API, which then responds with the daily weather forecast. We collect the weather data, process it, and then based on the forecast, we recommend suitable clothing to the user.
+## Functionality
+- Displays current temperature and location
+- Shows clothing items by weather type (hot/warm/cold)
+- Add new clothing items using a modal form
+- Responsive layout for desktop and mobile
 
-## Links
-
-- [Figma Design](https://www.figma.com/file/DTojSwldenF9UPKQZd6RRb/Sprint-10%3A-WTWR)
+## Technologies & Techniques
+- React + Vite
+- JSX components
+- CSS (BEM naming)
+- Responsive design with media queries
+- GitHub Pages deployment 
