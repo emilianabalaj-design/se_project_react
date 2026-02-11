@@ -1,0 +1,124 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 24px;
+  height: 40px;
+}
+
+.header__logo {
+  width: 89px;
+  height: 40px;
+  margin-right: 24px;
+  font-size: 32px;
+  font-weight: 900;
+}
+
+.header__place {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  margin-right: 20px;
+}
+
+.header__add-clothes-btn {
+  margin-left: auto;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  padding: 8px 16px;
+  margin-right: 20px;
+
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.header__username {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  margin-right: 12px;
+}
+
+.header__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+@media (max-width: 480px) {
+  .header {
+    height: auto; /* remove 40px lock */
+    padding: 16px 0;
+    display: flex;
+    flex-wrap: wrap; /* allows second row */
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Logo */
+  .header__logo {
+    height: 28px;
+    width: auto;
+    margin: 0;
+  }
+
+  /* Date under logo */
+  .header__place {
+    order: 3;
+    flex-basis: 100%;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0;
+  }
+
+  /* Hide username + avatar */
+  .header__username,
+  .header__avatar {
+    display: none;
+  }
+
+  /* Turn add button into hamburger */
+  .header__add-clothes-btn {
+    order: 2;
+    margin-left: auto;
+
+    width: 44px;
+    height: 44px;
+    padding: 0;
+
+    font-size: 0;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 12px;
+    position: relative;
+  }
+
+  /* hamburger lines */
+  .header__add-clothes-btn::before,
+  .header__add-clothes-btn::after {
+    content: "";
+    position: absolute;
+    left: 11px;
+    right: 11px;
+    height: 2px;
+    background: #000;
+  }
+
+  .header__add-clothes-btn::before {
+    top: 15px;
+  }
+
+  .header__add-clothes-btn::after {
+    top: 27px;
+  }
+
+  .header__add-clothes-btn {
+    background-image: linear-gradient(#000, #000);
+    background-size: calc(100% - 22px) 2px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
