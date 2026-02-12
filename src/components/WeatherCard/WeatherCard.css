@@ -14,28 +14,6 @@
   object-position: right top;
 }
 
-.weather-card__sun {
-  position: absolute;
-  width: 60px;
-  height: 60px;
-
-  top: -18px;
-  right: -6px;
-
-  z-index: 1;
-}
-
-.weather-card__cloud {
-  position: absolute;
-  width: 167px;
-  height: 98px;
-
-  top: 0px;
-  right: -5px;
-
-  z-index: 2;
-}
-
 .weather-card__temp {
   position: absolute;
   margin: 0;

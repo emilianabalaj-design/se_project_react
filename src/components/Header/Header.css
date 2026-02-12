@@ -51,22 +51,20 @@
 
 @media (max-width: 480px) {
   .header {
-    height: auto; /* remove 40px lock */
+    height: auto;
     padding: 16px 0;
     display: flex;
-    flex-wrap: wrap; /* allows second row */
+    flex-wrap: wrap;
     align-items: center;
     gap: 8px;
   }
 
-  /* Logo */
   .header__logo {
     height: 28px;
     width: auto;
     margin: 0;
   }
 
-  /* Date under logo */
   .header__place {
     order: 3;
     flex-basis: 100%;
@@ -75,13 +73,11 @@
     margin: 0;
   }
 
-  /* Hide username + avatar */
   .header__username,
   .header__avatar {
     display: none;
   }
 
-  /* Turn add button into hamburger */
   .header__add-clothes-btn {
     order: 2;
     margin-left: auto;
@@ -96,7 +92,6 @@
     position: relative;
   }
 
-  /* hamburger lines */
   .header__add-clothes-btn::before,
   .header__add-clothes-btn::after {
     content: "";

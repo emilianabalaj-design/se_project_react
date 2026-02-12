@@ -6,7 +6,7 @@ import Footer from "../Footer/Footer.jsx";
 import ItemModal from "../ItemModal/ItemModal";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-import { defaultClothingItems } from "../utils/defaultClothingItem";
+import { defaultClothingItems } from "../../utils/defaultClothingItem";
 import "./App.css";
 
 function App() {
