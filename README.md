@@ -90,6 +90,12 @@ https://www.loom.com/share/89fb1e1694e74b52bf0fabb633b08158
 
 ---
 
+## Backend Repository
+
+https://github.com/emilianabalaj-design/se_project_express
+
+---
+
 ## Author
 
 Emiliana Balaj  
