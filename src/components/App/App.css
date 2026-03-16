@@ -1,0 +1,13 @@
+.app {
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  margin: 0 auto;
+  max-width: 1360px;
+  padding: 0 40px;
+}
+
+@media screen and (max-width: 480px) {
+  .app {
+    max-width: 375px;
+    padding: 0 16px;
+  }
+}
