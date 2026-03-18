@@ -1,3 +1,4 @@
+import "./EditProfileModal.css";
 import { useEffect, useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
