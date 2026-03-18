@@ -1,11 +1,62 @@
-/* Finish styling the sidebar element */
-
 .sidebar {
-  min-width: 229px;
+  width: 229px;
+  display: flex;
+  flex-direction: column;
 }
 
-.sidebar__row {
+.sidebar__top {
   display: flex;
-  flex-direction: row-reverse;
+  align-items: center;
   gap: 16px;
+  margin-bottom: 24px;
+}
+
+.sidebar__avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* fallback avatar (letter) */
+.sidebar__avatar-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  color: #fff;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.sidebar__username {
+  margin: 0;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.sidebar__button {
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0 0 8px;
+  text-align: left;
+
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+.sidebar__button:last-child {
+  margin-bottom: 0;
+}
+
+.sidebar__button:hover {
+  opacity: 0.6;
 }

@@ -60,14 +60,6 @@ function Header({
                 </div>
               )}
             </Link>
-
-            <button
-              type="button"
-              className="header__auth-btn"
-              onClick={handleSignOut}
-            >
-              Log Out
-            </button>
           </>
         ) : (
           <>

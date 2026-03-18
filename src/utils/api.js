@@ -37,4 +37,20 @@ function deleteItems(id, token) {
   }).then(handleResponse);
 }
 
-export { getItems, addItems, deleteItems };
+function updateUserInfo({ name, avatar }, token) {
+  return fetch(`${baseUrl}/users/me`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({ name, avatar }),
+  }).then((res) => {
+    if (!res.ok) {
+      return Promise.reject(`Error: ${res.status}`);
+    }
+    return res.json();
+  });
+}
+
+export { getItems, addItems, deleteItems, updateUserInfo };

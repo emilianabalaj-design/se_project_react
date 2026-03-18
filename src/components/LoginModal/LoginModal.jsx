@@ -18,6 +18,7 @@ function LoginModal({ isOpen, onClose, onLogin, handleOpenRegisterModal }) {
       onClose={onClose}
       handleSubmit={handleSubmit}
       isDisabled={!email || !password}
+      footerClassName="modal__actions_type_auth"
       footer={
         <button
           type="button"

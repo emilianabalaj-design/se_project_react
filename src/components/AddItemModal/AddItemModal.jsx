@@ -49,6 +49,8 @@ function AddItemModal({ isOpen, handleAddItemSubmit, onClose }) {
             name="name"
             value={values.name}
             onChange={handleChange}
+            placeholder="Name"
+            required
           />
         </label>
       </fieldset>

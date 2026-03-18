@@ -12,7 +12,7 @@ function ClothesSection({
 
   const userItems = clothingItem.filter((item) => {
     return (
-      item.owner?._id === currentUser._id || item.owner === currentUser._id
+      item.owner?._id === currentUser?._id || item.owner === currentUser?._id
     );
   });
 

@@ -46,31 +46,58 @@
 
 .modal__footer {
   display: flex;
-  background: #fff;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 20px 32px 32px;
+  padding: 12px 24px 20px;
+  background: #fff;
+  box-sizing: border-box;
+  min-height: 108px;
 }
 
 .modal__footer-info {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  align-items: flex-start;
+  flex: 1;
+  gap: 12px;
+}
+
+.modal__title {
+  margin: 0;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000;
+}
+
+.modal__title_type_item {
+  margin-top: 8px;
+  padding: 16px 0;
+}
+
+.modal__weather {
+  margin: 0;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000;
 }
 
 .modal__delete-btn {
   background: transparent;
-  border: 0;
-  color: rgba(255, 77, 0, 1);
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1;
-  cursor: pointer;
-  padding: 0;
+  border: none;
+  padding: 24px 0;
   margin: 0;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ff4d00;
+  cursor: pointer;
   align-self: flex-start;
 }
-
 .modal__delete-btn:hover {
   opacity: 0.6;
 }
@@ -86,10 +113,6 @@
   padding: 0;
   cursor: pointer;
   align-items: flex-start;
-}
-
-.modal__title {
-  margin: 0;
 }
 
 .modal__fieldset {

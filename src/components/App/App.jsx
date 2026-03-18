@@ -11,7 +11,9 @@ import Footer from "../Footer/Footer.jsx";
 import ItemModal from "../ItemModal/ItemModal";
 import AddItemModal from "../AddItemModal/AddItemModal.jsx";
 import Profile from "../Profile/Profile";
+import EditProfileModal from "../EditProfileModal/EditProfileModal.jsx";
 
+import { updateUserInfo } from "../../utils/api.js";
 import { getWeatherData } from "../../utils/weatherApi";
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext.js";
 import { addItems, getItems, deleteItems } from "../../utils/api.js";
@@ -59,6 +61,21 @@ function App() {
   function handleOpenRegisterModal() {
     setActiveModal("register");
   }
+
+  function handleEditProfileClick() {
+    setActiveModal("edit-profile");
+  }
+
+  const handleUpdateUser = ({ name, avatar }) => {
+    const jwt = localStorage.getItem("jwt");
+
+    updateUserInfo({ name, avatar }, jwt)
+      .then((updatedUser) => {
+        setCurrentUser(updatedUser);
+        handleCloseModal();
+      })
+      .catch(console.error);
+  };
 
   function handleAddItemSubmit(inputValues) {
     const jwt = localStorage.getItem("jwt");
@@ -139,9 +156,6 @@ function App() {
 
   useEffect(() => {
     const token = localStorage.getItem("jwt");
-
-    if (!token) return;
-
     getItems(token)
       .then((items) => {
         setClothingItems(items.reverse());
@@ -221,9 +235,12 @@ function App() {
               element={
                 <ProtectedRoute isLoggedIn={isLoggedIn}>
                   <Profile
+                    currentUser={currentUser}
                     clothingItem={clothingItem}
                     handleOpenItemModal={handleOpenItemModal}
                     handleOpenAddGarmentModal={handleOpenAddGarmentModal}
+                    handleSignOut={handleSignOut}
+                    handleEditProfileClick={handleEditProfileClick}
                   />
                 </ProtectedRoute>
               }
@@ -240,6 +257,12 @@ function App() {
             isOpen={activeModal === "add-garment-modal"}
             handleAddItemSubmit={handleAddItemSubmit}
             onClose={handleCloseModal}
+          />
+          <EditProfileModal
+            isOpen={activeModal === "edit-profile"}
+            onClose={handleCloseModal}
+            currentUser={currentUser}
+            onUpdateUser={handleUpdateUser}
           />
           <DeleteConfirmationModal
             isOpen={activeModal === "confirm-delete"}

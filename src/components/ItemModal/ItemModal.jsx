@@ -21,7 +21,7 @@ function ItemModal({ card, isOpen, onClose, onDeleteClick }) {
 
         <div className="modal__footer">
           <div className="modal__foter-info">
-            <h2 className="modal__title">{card.name}</h2>
+            <h2 className="modal__title modal__title_type_item">{card.name}</h2>
             <p className="modal__weather">Weather: {card.weather}</p>
           </div>
           {isOwn && (
