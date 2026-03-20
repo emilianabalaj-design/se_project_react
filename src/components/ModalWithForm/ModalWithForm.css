@@ -22,7 +22,6 @@
 
 .modal__container_type_form {
   width: 496px;
-  min-height: 304px;
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 20px;
@@ -32,12 +31,11 @@
 }
 
 .modal__title {
-  padding: 26px 10px;
   font-family: "Cabinet Grotesk", Arial, sans-serif;
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
-
+  margin: 0 0 24px;
   color: #000;
 }
 
@@ -62,7 +60,6 @@
 .modal__form {
   display: flex;
   flex-direction: column;
-  padding-left: 10px;
 }
 
 .modal__input {
@@ -124,7 +121,6 @@
 .modal__fieldset {
   border: none;
   padding: 0;
-  margin: 0 0 24px;
 }
 
 .modal__fieldset > div {
@@ -164,7 +160,6 @@
   display: flex;
   align-items: center;
   margin-top: 12px;
-  margin-bottom: 28px;
   gap: 12px;
 }
 

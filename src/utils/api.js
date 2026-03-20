@@ -4,12 +4,8 @@ function handleResponse(res) {
   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
 }
 
-const getItems = (token) => {
-  return fetch(`${baseUrl}/items`, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  }).then(handleResponse);
+const getItems = () => {
+  return fetch(`${baseUrl}/items`).then(handleResponse);
 };
 
 function addItems({ name, imageUrl, weather }, token) {
