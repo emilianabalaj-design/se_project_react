@@ -1,4 +1,4 @@
-const baseUrl = "https://api.emi28-app.com";
+const baseUrl = "https://api.emiliana.strangled.net";
 
 const handleResponse = (res) => {
   if (!res.ok) {

@@ -1,4 +1,4 @@
-const baseUrl = "https://emi28-app.com";
+const baseUrl = "https://api.emiliana.strangled.net";
 
 function handleResponse(res) {
   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
