@@ -1,4 +1,4 @@
-const baseUrl = "https://api.emi28-app.com";
+const baseUrl = "http://35.231.187.253:3001";
 
 function handleResponse(res) {
   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
