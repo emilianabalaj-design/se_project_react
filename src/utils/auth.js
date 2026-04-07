@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:3001";
+const baseUrl = "https://api.emi28-app.com";
 
 const handleResponse = (res) => {
   if (!res.ok) {

@@ -1,11 +1,16 @@
-const baseUrl = "http://localhost:3001";
+const baseUrl = "https://api.emi28-app.com";
 
 function handleResponse(res) {
   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
 }
 
-const getItems = () => {
-  return fetch(`${baseUrl}/items`).then(handleResponse);
+const getItems = (token) => {
+  return fetch(`${baseUrl}/items`, {
+    headers: {
+      authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+  }).then(handleResponse);
 };
 
 function addItems({ name, imageUrl, weather }, token) {
@@ -49,4 +54,41 @@ function updateUserInfo({ name, avatar }, token) {
   });
 }
 
-export { getItems, addItems, deleteItems, updateUserInfo };
+function addCardLike(id, token) {
+  return fetch(`${baseUrl}/items/${id}/likes`, {
+    method: "PUT",
+    headers: {
+      authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+  }).then((res) => {
+    if (!res.ok) {
+      return Promise.reject(`Error: ${res.status}`);
+    }
+    return res.json();
+  });
+}
+
+function removeCardLike(id, token) {
+  return fetch(`${baseUrl}/items/${id}/likes`, {
+    method: "DELETE",
+    headers: {
+      authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+  }).then((res) => {
+    if (!res.ok) {
+      return Promise.reject(`Error: ${res.status}`);
+    }
+    return res.json();
+  });
+}
+
+export {
+  getItems,
+  addItems,
+  deleteItems,
+  updateUserInfo,
+  removeCardLike,
+  addCardLike,
+};

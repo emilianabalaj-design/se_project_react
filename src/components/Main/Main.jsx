@@ -4,7 +4,7 @@ import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnit
 import WeatherCard from "../WeatherCard/WeatherCard";
 import ItemCard from "../ItemCard/ItemCard";
 
-function Main({ clothingItem, handleOpenItemModal, weatherData }) {
+function Main({ clothingItem, handleOpenItemModal, weatherData, onCardLike }) {
   const { currentTempUnit } = useContext(CurrentTemperatureUnitContext);
 
   if (!weatherData || !weatherData.temp) {
@@ -29,6 +29,7 @@ function Main({ clothingItem, handleOpenItemModal, weatherData }) {
               key={item._id}
               data={item}
               onCardClick={handleOpenItemModal}
+              onCardLike={onCardLike}
             />
           ))}
       </ul>

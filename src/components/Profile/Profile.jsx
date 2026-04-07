@@ -9,6 +9,7 @@ function Profile({
   currentUser,
   handleSignOut,
   handleEditProfileClick,
+  onCardLike,
 }) {
   return (
     <main className="profile">
@@ -21,6 +22,7 @@ function Profile({
         clothingItem={clothingItem}
         handleOpenItemModal={handleOpenItemModal}
         handleOpenAddGarmentModal={handleOpenAddGarmentModal}
+        onCardLike={onCardLike}
       />
     </main>
   );

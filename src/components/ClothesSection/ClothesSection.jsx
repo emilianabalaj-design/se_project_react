@@ -7,6 +7,7 @@ function ClothesSection({
   clothingItem,
   handleOpenItemModal,
   handleOpenAddGarmentModal,
+  onCardLike,
 }) {
   const currentUser = useContext(CurrentUserContext);
 
@@ -34,6 +35,7 @@ function ClothesSection({
             key={item._id}
             data={item}
             onCardClick={handleOpenItemModal}
+            onCardLike={onCardLike}
           />
         ))}
       </ul>

@@ -16,7 +16,13 @@ import EditProfileModal from "../EditProfileModal/EditProfileModal.jsx";
 import { updateUserInfo } from "../../utils/api.js";
 import { getWeatherData } from "../../utils/weatherApi";
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext.js";
-import { addItems, getItems, deleteItems } from "../../utils/api.js";
+import {
+  addItems,
+  getItems,
+  deleteItems,
+  addCardLike,
+  removeCardLike,
+} from "../../utils/api.js";
 import * as auth from "../../utils/auth.js";
 import DeleteConfirmationModal from "../DeleteConfirmationModal/DeleteConfirmationModal.jsx";
 import CurrentUserContext from "../../contexts/CurrentUserContext.js";
@@ -77,6 +83,24 @@ function App() {
       .catch(console.error);
   };
 
+  const handleCardLike = ({ id, isLiked }) => {
+    const token = localStorage.getItem("jwt");
+
+    if (!token) return;
+
+    const request = isLiked
+      ? removeCardLike(id, token)
+      : addCardLike(id, token);
+
+    request
+      .then((updatedCard) => {
+        setClothingItems((cards) =>
+          cards.map((item) => (item._id === id ? updatedCard : item)),
+        );
+      })
+      .catch((err) => console.log(err));
+  };
+
   function handleAddItemSubmit(inputValues) {
     const jwt = localStorage.getItem("jwt");
 
@@ -130,7 +154,6 @@ function App() {
     setCurrentUser({});
   }
 
-  //TODO- Pass as a prop
   function handleDeleteItemSubmit(item) {
     const jwt = localStorage.getItem("jwt");
 
@@ -156,6 +179,11 @@ function App() {
 
   useEffect(() => {
     const token = localStorage.getItem("jwt");
+
+    if (!token || !isLoggedIn) {
+      return;
+    }
+
     getItems(token)
       .then((items) => {
         setClothingItems(items.reverse());
@@ -227,6 +255,7 @@ function App() {
                   clothingItem={clothingItem}
                   handleOpenItemModal={handleOpenItemModal}
                   weatherData={weatherData}
+                  onCardLike={handleCardLike}
                 />
               }
             ></Route>
@@ -241,6 +270,7 @@ function App() {
                     handleOpenAddGarmentModal={handleOpenAddGarmentModal}
                     handleSignOut={handleSignOut}
                     handleEditProfileClick={handleEditProfileClick}
+                    onCardLike={handleCardLike}
                   />
                 </ProtectedRoute>
               }
